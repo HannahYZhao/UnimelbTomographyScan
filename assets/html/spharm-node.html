@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+
+        p, li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>SPHARM Node</h1>
+
+    <p>The SPHARM node allows a user to convert .gipl files to .vtk files. It calls SPHARM-PDM modules in SlicerSALT,
+        a application that must be installed. SlicerSALT
+        can be downloaded here: http://salt.slicer.org/</p>
+
+    <h3>Selecting animal type</h3>
+    <ul>
+        <li>Select the animal type from three options: rabbit, rat and mouse.</li>
+        <li>Depending on the type selected, the parameters for the SPHARM-PDM module will be set. You will be able
+            to modify these later before running SPHARM-PDM.
+        </li>
+    </ul>
+
+
+    <h3>Loading Files</h3>
+    <p>
+        This node has four inputs as follows:
+    </p>
+    <ul>
+        <li>Select the input folder for the .gipl files. Files cannot be individually selected.</li>
+        <li>Select a folder as a working directory. This will store .ini files that are generated in order to direct
+            the SPHARM-PDM module. Two .ini files will be created, one for the low resolution images, another for
+            the high resolution images. A third file will be put in this folder - SPHARM-PDM.py - which is also
+            needed to run the SPHARM-PDM module
+        </li>
+        <li>Select a output folder for low resolution images. These will be used later to calculate the principle
+            components.
+        </li>
+        <li>Select a output folder for high resolution images. These can be used for visualisation purposes.
+    </ul>
+
+    <h3>Select SlicerSALT location</h3>
+    <p>In order to run the SPHARM-PDM module, you must select the location of the SlicerSALT application.
+    <ul>
+        <li>Example location: C:/Program Files/SlicerSALT 3.0.0/SlicerSALT.exe</li>
+    </ul>
+
+    <h3>Low Parameters</h3>
+    <ul>
+        <li>sx, sy and sz indicate the rescale factors. They should be set to the same amount.</li>
+        <li>SubdivLevel value - subdivision level - the lower the value, the less detailed the result.</li>
+        <li>You can select a flip template. This is a .coeff file that would have been generated previously from
+            running SPHARM-PDM. This is used to ensure the output is flipped consistently.
+        </li>
+    </ul>
+
+    <h3>High Parameters</h3>
+    <p>
+        As before, except that these are the values for the high resolution images. The subdivision level should be
+        greater.
+    </p>
+
+    <h3>Writing Parameters</h3>
+    <p>
+    <ul>
+        <li>Click run to begin the process of creating two .ini files. These will be used to configure the SPHARM-PDM
+            module.
+        </li>
+        <li>Information about what the files contain is outputted on the console. Some parameters that are automatically
+            set:
+            ('label', '0'), ('gauss', 'False'), ('iter', '1000'), ('medialmesh', 'True'), ('phiiteration', '100'),
+            ('thetaiteration', '100'), ('regparatemplatefileon', 'False')
+        </li>
+    </ul>
+
+    <h3>Generating Low meshes</h3>
+    <ul>
+        <li>Click run to begin the process of creating low resolution meshes</li>
+        <li>This may take 1 - 2 minutes per file, depending on the paramaters selected</li>
+        <li>Three folders will be generated: Step1_SegPostProcess, Step2_GenParaMesh, Step3_ParaToSPHARMMesh</li>
+        <li>Later, the node will output the locations of the files X_pp_surf_SPHARM.vtk, where X is the gipl file
+            name. Example. input of RAT_RE_16_LL_HE1_T_MSK.gipl creates RAT_RE_16_LL_HE1_T_MSK_pp_surf_SPHARM.gipl
+        </li>
+        <li>After the process has finished, you will be informed if any files are missing. This may be caused by
+            using inappropriate parameters.
+        </li>
+    </ul>
+
+    <h3>Generating High meshes</h3>
+    <p>The same as generating low meshes, except the high resolution .ini file is used to set the parameters
+    </p>
+
+    <h3>SPHARM verification</h3>
+    <p>A table displaying images of the output files can be used to verify the result. If the images appear distorted
+        you may need to re-run using different parameters.</p>
+    <ul>
+        <li>Select from low, high or both to change what the table displays</li>
+        <li>Selecting both displays the low and high resolution images.</li>
+        <li>4 views are displayed for each image: 3d, Transverse, Coronal and Sagittal</li>
+    </ul>
+
+    <h3>PCA verification</h3>
+    <p>A table displaying the high resolution images with the PCA vectors. This can be used to verify if your
+        input gipl files have been correctly cropped. </p>
+    <ul>
+        <li>Each vector is displayed using a different color, check the Key to see which color corresponds to Longest,
+            Middle and Shortest
+        </li>
+        <li>Select any files that are incorrectly cropped. The node will output the corresponding select gipl files
+            that you can then use with a different module to re-crop them.
+        </li>
+    </ul>
+
+    <h3>Summary</h3>
+    <p>A summary of the files that the module will output: low resolution files, high resolution files and gipl files
+        select for re-cropping.</p>
+    <br>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>How to I access the Inputs and Outputs for a Node?</h1>
+
+        <p>While inside the <i>update_event</i> method, you can call <i>self.input(i)</i> to access the input for the (i+1)th port for that node. As usual in coding, the first port is the 0th one. This should be familiar as it is the same as indexing an array in most coding languages. For example, if you are getting a folder path on the 2nd port, you would call self.input(1)</p>
+
+        <p>In contrast, if you want to set the output of a node, you would need to call <i>self.set_output_val(i, data)</i> to send data to the (i+1)th port for that node.</p>
+
+        <p>The order of these ports are the same as when they are first defined in the <i>init_inputs</i> and <i>init_outputs</i> variables, as the order here defines the order they are displayed on the node.</p>
+
+        <p>There is one thing to note though when sending data between nodes: our system wants the data to be packaged within a dictionary that allows us to determine the type of the data being sent. More specifically, the dictionary contains a value "type" that says what type of data this dictionary contains, and a "data" value which contains the actual data being sent. This dictionary can be created using <i>getNewTypedData</i> as defined in procBuilder/pbUtil.py, and the data gotten from inside one by calling <i>dataDictionary["data"]</i></p>
+    </div>
+    <br>
+</body>
+</html>

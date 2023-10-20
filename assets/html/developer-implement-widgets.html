@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Developing Custom Widgets</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Developing Custom Widgets</h1>
+        <h3>What are Widgets?</h3>
+        <p>Widgets are designed to appear on the node itself. You may see the various widgets that are defined currently in the nodes. The FileOpen node displays an 
+            "Open File" button and a list view displaying any selected files.
+            While this is good for small widgets, you may want to implement bigger widgets or dialogs which are more dynamic and harder to define. These can 
+            be defined within the node itself based on some trigger such as an input or the node becoming "Runnable" (as defined in the SPHARM node) which calls a function
+            in the update_event method of the node. This function can then refer to any PySide based widget that runs its own process. Another alternative is to use a
+            button widget as a trigger to open other dialogs or widgets.</p>
+
+        <h3>How can I create a New Widget?</h3>
+        <p>New widgets can be created and defined in the widgets.py file found in procBuilder. To be displayed on the node, you must set the parameter:
+            main_widget_class = Your Widget and main_widget_pos = "between ports" or "below_ports". You should now be able to see your widget on the node. You
+            can customise the widget however you like using the PySide2 library, such as using it as a trigger to open further dialog boxes or visually modify data etc.</p>
+        
+        <h3>How can I communicate with my Widget?</h3>
+        <p>You can talk to the widget on the node or vice versa using Signals and Slots. If you want to access some information from the widget such as 
+            any selected files and pass it to the node so that you can output them to the next node in the process, you can define a signal in the widget, for example
+            value_changed = Signal(object). Now in your node, you can define a slot to access that value whenever value_changed is updated:
+            self.main_widget().value_changed.connect(self.main_widget_val_changed) where self.main_widget_val_changed is a callback defined as follows:
+            def main_widget_val_changed(self, val):
+                self.val = val
+                self.update()
+        </p>
+        <br>
+    </div>
+</body>
+</html>

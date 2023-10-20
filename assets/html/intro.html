@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to ScanFlow!</h1>
+
+        <p>This tools main goal is to assist in the analysis of bone scans though a modular graphical user interface. This tool is to be used for <strong>research only</strong> and is <strong>not to be used for medical purposes</strong>.</p>
+        <img alt="" src="assets/html/images/team-logo-small.png" />
+        <p>This tool works by creating a Process made up of many Nodes with connections between them that show how data will be passed around, and then running that Process to execute the functionality the Nodes describe. Below is a series of steps that can be used to create a simple process that shows how the tool can be used. </p>
+
+        <ul>
+            <li>Open a new process by either selecting 'New Process' on the landing page, or by File>New in the menubar at the top of the process builder window.</li>
+            <li>Right click to open up the new Node selection menu, select Open File, and click and drag the grey parts of the Node to move it to a position you prefer.</li>
+            <li>Hover over the hollow circle on the right side of the node, then click and drag to a new section of the process builder. You will then be prompted to select a new node, and select 'Visualise VTK Image'.</li>
+            <li>Click the 'Open File' button on the node, and select the .vtk files you wish to visualise later on. You will see the node update to list the items you selected.</li>
+            <li>You have now built a Process and provided the input data for it, and the final thing to do is run it to activate the nodes. In the menubar at the top of the window select Run>Run.</li>
+        </ul>
+
+        <p>Congratulations, you have now created and run a simple Process. You now have the basics needed to use this tool, but if you'd like to learn more about ScanFlow, you can refer to the User Manual, which can be found in Help > User Manual in the menu bar.</p>
+
+        <br>
+    </div>
+</body>
+</html>

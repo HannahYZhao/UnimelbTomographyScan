@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Output Nodes</title>
+  <style>
+    h1 {
+      color: black;
+    }
+    div {
+      margin: 40px 30px;
+      background-color: lightblue;
+    }
+    p,li {
+      font-size: 16px;
+      line-height: 26px;
+    }
+    img {
+      border: 5px solid #555;
+      width: 2%;
+      height: 2%;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <h1>Output Nodes</h1>
+  <h2>Create Log File Node</h2>
+  <h3>How to use this node?</h3>
+  <p>
+    This node performs a save function. It connects to the visualisation node
+    or SPHARM node outputs and saves the outputs in appropriate files. For
+    example, The visualisation node provides two outputs, a list of valid VTK
+    files and a list of invalid VTK files. When this node is connected, one
+    each to each output, it will recognise the type of output and save it
+    accordingly. Moreover, user can specify the log file's name by typing in
+    the test field of this node. The log file's name would be timestamp_name.txt.
+  </p>
+  <p>
+    It has two inputs. The "Logged Files" port will receive a list of file names
+    to be logged, the "destination folder" port will provide a folder path from
+    a Select Folder node and this node will save a text file there.
+  </p>
+  <br>
+</div>
+</body>

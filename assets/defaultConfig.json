@@ -1,0 +1,45 @@
+{
+  "latestPath": "",
+  "firstTime": true,
+  "inputDir": "/",
+  "outputDir": "/",
+  "colorTheme": "light",
+  "nextColorTheme": "light",
+  "visualisation": {
+    "axisColors": ["#ff0000", "#008000", "#0000ff"],
+    "boneOpacity": 1
+  },
+  "spharm": {
+    "default": {
+      "rat": {
+        "scale": 0.2,
+        "subdivLow": 10,
+        "degreeLow": 5,
+        "subdivHigh": 30,
+        "degreeHigh": 20
+      },
+      "rabbit": {
+        "scale": 0.6,
+        "subdivLow": 10,
+        "degreeLow": 5,
+        "subdivHigh": 30,
+        "degreeHigh": 20
+      },
+      "mouse": {
+        "scale": 0.1,
+        "subdivLow": 10,
+        "degreeLow": 5,
+        "subdivHigh": 30,
+        "degreeHigh": 20
+      }
+    },
+    "first": "#ff0000",
+    "second": "#008000",
+    "third": "#0000ff",
+    "slicerSALTPath": "",
+    "gipl": "",
+    "ini": "",
+    "low": "",
+    "high": ""
+  }
+}

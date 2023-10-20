@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>How do I create and run a Process?</h1>
+
+        <p>At it's core, creating a Process is done by connecting multiple compatible Nodes together. A walkthrough of this process can be found in the Welcome message, but let's go through the details of how this all works</p>
+
+        <p>When you right click in the space where a Process can be created, a window will pop up listing all of the Nodes you can build your Process out of. These Nodes have been displayed in alphabetical order, and can be searched using your keyboard to enter text in the bar at the top of the window. When searching, it will try and find a Node who's name contains the text you wrote.</p>
+
+        <p>When you select a Node from this menu, it will then be placed inside the workspace. If you think the Node has been placed in the wrong spot, you can move it to a new location just by clicking and draging the node itself. Make sure not to click and drag on the ports though, as that is how you make connections with compatible nodes. Actually, why don't we go into that now.</p>
+
+        <p>To make a connection, click and drag from the port you want to connect to the port of the node you want to connect it to. If the node you want to connect to does not exist, trying to do so will prompt you to create a new Node to connect to instead. However, you can only create connections between ports that sent compatible data between them. For example, you cannot connect a port that outputs a .vtk file to a port that expects a folder directory. If you do try to do so though, an error message will pop up to let you know the types of the ports you were trying to connect.</p>
+
+        <p>Once a Process has been created, you can go to the Run menu at the top of the window and select the <i>Run Process</i> button. This will then run the process you have created.</p>
+    </div>
+    <br>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Open Node</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Write File Node</h1>
+        <h3>How to use this node?</h3>
+        <p>
+            This node performs a save function. It connects to the visualisation node outputs and saves the outputs in appropriate files.
+            The visualisation node provides two outputs, a list of valid VTK files and a list of invalid VTK files. When this node is connected,
+            one each to each output, it will recognise the type of output and save it accordingly. The layout is very simple, it has one button to
+            "Select Folder". When pressed, this button simply selects a folder path and saves it in the node.
+            If the button is pressed before any input is passed or process is run, it will allow the user to select a directory in which the file 
+            (valid or invalid VTK depending on which output its connected to) will be saved. So, when the user runs the process, the file will be
+            automatically saved in that directory each time until a new directory is selected.
+            If the button is not pressed before running the process, it will automatically open a file dialog that will allow the user to manually
+            navigate to the required directory and save the file there.
+        </p>
+        <br>
+    </div>
+</body>

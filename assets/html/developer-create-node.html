@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>How can I create a New Node?</h1>
+
+        <p>As a Developer, you will be responsible for adding new Nodes to this application. To start with, make sure you familiarise yourself with the tools and libraries used in this project <strong>(Add link to appropriate page)</strong></p>
+
+        <p>To start, I'd recommend you take a look at the two template Nodes defined in procBuilder/nodes.py, as they are two nodes that outline how a Node is structured and what information you need to specify. However, let's have a quick overview to give some context.</p>
+
+        <p>The single most important method in a Node is <i>update_event</i>. This is what is called when a Node is updated and told to do something by the system. This is where you will tell the node to get the data from the Input Ports, what to do with that data, and then what to pass on to the Output Ports.</p>
+
+        <p>Next most important is the Type of the data being passed along. This is how the system makes sure that compatible nodes are connected to each other, and that they will be able to handle each other's data. You can extend the list of valid types, but you will need to checkout the appropriate page for more details. <strong>(Add link to appropriate page)</strong></p>
+
+        <p>The final important thing to be aware of is Widgets. These are how you add additional functionality to the nodes themselves. Do you want to add a button the user can click? Add a widget. Do you want to add a textbox the user can enter information into? Add a widget. Do you want to display the result of a calculation inside the node itself without opening a new window entirely? Sorry, that can't be done. .... Nah, just joking. You make a Widget. However, Widgets are complicated, and as such have their own page that you can check out if you want more information about them. <strong>(Add link to appropriate page)</strong></p>
+
+        <p>Just note that if you decide to add a new Node to the Process Buider, it will not appear in the node menu accessible by right clicking until you add it to the list of nodes in ProcessBuilderWindow in processBuilder.py.</p>
+    </div>
+    <br>
+</body>
+</html>

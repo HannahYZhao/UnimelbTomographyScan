@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alignment Node</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p, li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Alignment Node</h1>
+    <p>The Alignment module includes two parts: CalculateTFMAT and AlignedVTKFiles</p>
+    <ul>
+        <li><strong>CalculateTFMAT:</strong> Allows user to calculate the corresponding tfmat value(zAngle1, xAngle,
+            zAngle2),
+            given the .vtk file.
+        </li>
+        <li><strong>AlignedVTKFiles:</strong> According to the corresponding tfmat value(zAngle1, xAngle, zAngle2),
+            change orignal .vtk files to the processed .vtk file
+        </li>
+    </ul>
+
+    <h3>CalculateTFMAT</h3>
+    <ul>
+        <li>Calculate TFMAT node has two inputs. The first input is ".vtk files" which can
+            receive a list which includes multiple absolute addresses of .vtk files. The
+            second input is "TFMAT root folder" which is the location for saving the TFMAT
+            files.</li>
+        <li>Calculate TFMAT node has one output. It will be the absolute address of where
+            TFMAT_1 folder and TFMAT_2 folder are stored. (<strong>For example:</strong> if TFMAT_1 folder
+            absolute address is "D:/2021 CIS repackagin of SPHARM Alignment Module/test/58/TFMAT_1",
+            TFMAT_2 folder absolute address is "D:/2021 CIS repackagin of SPHARM Alignment
+            Module/test/58/TFMAT_2", this output will be "D:/2021 CIS repackagin of SPHARM Alignment
+            Module/test/58")
+        </li>
+    </ul>
+
+    <h3>AlignedVTKFiles</h3>
+    <ul>
+        <li>Aligned VTK Files node has three input. The first input receives an absolute
+            address which stores the corresponding TFMAT_1 folder and TFMAT_2 folder. The
+            second input receives the location for saving the aligned .vtk files. The third
+            input receives the list of .vtk files that will be aligned; the other input.
+        </li>
+        <li>AlignedVTKFiles node has one output, which is the list of absolute addresses of aligned .vtk files <br>
+            According to each .vtk file name and the parameter Aligned_folder, generate the name and storage address
+            of each aligned .vtk file
+            <div style="margin-top: 0">
+                <strong>Naming aligned .vtk file rule:</strong><br>
+                <div style="margin-top: 0">
+                    aligned_path = Aligned_folder + "/Aligned/"<br>
+
+                    orignalFilename = filelist[index]<br>
+                    vtkFilename = orignalFilename[orignalFilename.rfind("/") + 1: ]<br>
+                    extension_vtk = ".vtk"<br>
+                    suffix = "_aligned"<br>
+                    alignedFilename = vtkFilename[:vtkFilename.rfind(".vtk")]<br>
+                    aligned_file = aligned_path + alignedFilename + suffix + extension_vtk<br>
+                    <br>
+                    <strong>For example: </strong>For example, given a .vtk file address "D:/2021 CIS repackagin of SPHARM
+                    Alignment Module/test/58/SPHARM/RAT_RE_16_LL_HE1_T_MSK_pp_surf_SPHARM.vtk",
+                    and the address of where aligned .vtk file is stored "D:/2021 CIS repackagin of SPHARM Alignment
+                    Module/test/58/"<br>
+                    The program will generate the address of the aligned .vtk file "D:/2021 CIS repackagin of SPHARM
+                    Alignment Module/test/58/Aligned/RAT_RE_16_LL_HE1_T_MSK_pp_surf_SPHARM_aligned.vtk"
+                </div>
+            </div>
+        </li>
+
+        <li><strong>Attention: </strong>According to each .vtk file name and the parameter TFMAT_folder, finding the
+            corresponding .dat files (which include: zAngle1, xAngle, zAngle2) of each .vtk file<br>
+            <div style="margin-top: 0">
+                <strong>Finding Rule:</strong>
+                <div style="margin-top: 0">
+                    tfmat_1_path = TFMAT_folder + "/TFMAT_1/"<br>
+                    tfmat_2_path = TFMAT_folder + "/TFMAT_2/"<br>
+
+                    orignalFilename = filelist[index]<br>
+                    vtkFilename = orignalFilename[orignalFilename.rfind("/") + 1: ]<br>
+
+                    extension = ".dat"<br>
+                    prefix1 = "TF_MAT_1_"<br>
+                    prefix2 = "TF_MAT_2_"<br>
+                    tfname = vtkFilename[: vtkFilename.find("_T")]<br>
+                    tfmat_1_file = tfmat_1_path + prefix1 + tfname + extension<br>
+                    tfmat_2_file = tfmat_2_path + prefix2 + tfname + extension<br>
+                    <br>
+                    <strong>For example: </strong> Given a .vtk file address: "D:/2021 CIS repackagin of SPHARM Alignment
+                    Module/test/58/SPHARM/RAT_RE_16_LL_HE1_T_MSK_pp_surf_SPHARM.vtk",
+                    and the address of where TFMAT is stored "D:/2021 CIS repackagin of SPHARM Alignment
+                    Module/test/58/"<br>
+                    The program will find the address of tfmat_1 file which stores zAngle1, xAngle according to each .vtk
+                    file name and the parameter TFMAT_folder "D:/2021 CIS repackagin of SPHARM Alignment
+                    Module/test/58/TFMAT_1/TF_MAT_1_RAT_RE_16_LL_HE1.dat";
+                    and find the address of tfmat_2 file which stores zAngle2 "D:/2021 CIS repackagin of SPHARM Alignment
+                    Module/test/58/TFMAT_2/TF_MAT_2_RAT_RE_16_LL_HE1.dat"<br>
+                    If this function find the corresponding .dat files, it will align the orignal .vtk file, otherwise, the
+                    function will report an error and stop.<br>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
+

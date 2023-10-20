@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Updating this user manual</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p, li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>How can I update the user manual?</h1>
+    <p>To update this user manual, there are 3 steps. </p>
+    <ol>
+        <li><strong>For each of the user manual page you want to add, create an HTML file for it under "assets/html" in the project file structure. </strong>
+            (Note: If you are just updating some of the HTML files and are not adding new ones, you can skip the first two steps).
+            Despite that QWidget may not support some of the advanced tags and styles that are normally used in web development, most of the very basic ones (e.g. unordered and ordered lists, bold, italic, etc.) work.
+        </li>
+        <li><strong>After creating HTML file(s), they need to be declared in userManual.qhp.</strong>
+            Alongside with the list of section tags, add a new section tag where title="[The title that will be shown in the content table on the left hand side", and ref="[the-file-name].html".
+            The section tags are hierarchical, so you can create subpages by wrapping sections inside sections.
+            You also need to include a file tag with the file name in it inside the files tag.
+            <br/>
+            In summary, the two lines that needs to be added are
+            <br/>
+            <strong>&#60;section title="[title]", and ref="[file-name].html"&#62;&#60;/section&#62;</strong>
+            <br/>
+            and <strong>&#60;file&#62;[file-name].html&#60;/file&#62;</strong>.
+            <br/>
+            Save the qhp file.
+        </li>
+        <li><strong>The third step is to compile the qhp and qhcp files.</strong>
+            To compile the two files, you will need to find the qhelpgenerator tool on your local machine.
+            If you already have QtPy installed in your Python site-packages, there should be a qt5_applications too,
+            and the qhelpgenerator should be inside the Qt/bin folder in the qt5_applications.
+            Take my machine (macOS) as an example, my qhelpgenerator is in /.../python3.9/site-packages/qt5_applications/Qt/bin.
+            <br/>
+            Copy the path of the qhelpgenerator, and run <strong>/path-to-qhelpgenerator/qhelpgenerator /path-to-qhcp/userManual.qhcp -o /path-to-qhc/userManual.qhc</strong> in your terminal.
+            If it's compiled successfully, the new user manual page(s) should appear the next time you start the app.
+        </li>
+    </ol>
+    <br/>
+
+</div>
+
+</body>
+</html>
+

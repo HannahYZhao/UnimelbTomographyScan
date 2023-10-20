@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>What are Processes and Nodes?</h1>
+
+        <p>The way to use this tool is to create a Process that you will execute, and that Process is made up of Nodes. Each of these Nodes will do something when executed, for example the <i>Visualise VTK Image</i> Nodes allows you to take a .vtk file and visualise it using our Visualisation Window. These Nodes can then be chained together with compatible Nodes to execute more complex operations that make up a Process</p>
+
+        <p>Each Node has three main parts that you will need to worry about:
+            <ul>
+                <li><strong>Inputs</strong>: Most Node will have a port on the left hand side of the Node when you add it. These ports are how data is transmitted into the Node, and each port has a specific type of data it will accept. To be able to tell what each port accepts, they have been given a descriptive label that tells you what you need to pass into that port.</li>
+                <li><strong>Outputs</strong>: Similarly to the Inputs, most Nodes will have a port on the right hand side of the Node. These ports are how data is send out from a Node, and same as with Inputs have a specific type of data it creates. These also have descriptive labels.</li>
+                <li><strong>Module</strong>: While you will not see it from the GUI, this is what a node is executing when the Process is run. The Node will take the inputs Provided, execute the Module it was created for, and then pass the results to the output port.</li>
+            </ul>
+        </p>
+        
+    </div>
+    <br>
+</body>
+</html>

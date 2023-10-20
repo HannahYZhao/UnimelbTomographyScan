@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>What do I need to know about before extending this application?</h1>
+
+        <p>There are two main tools that were used to create this application that you will need to learn if you want to extend it's functionality, though you can get away with knowing neither if you just want to make simple extensions. These are QtPy, the tool used to create the GUIs, and ryvencore, the tool that let's the node magic happen.</p>
+
+        <p>QtPy is fairly simple as it is a Python port of the popular Qt framework that allows for GUIs to be built in C++. The specific version of QtPy we used in this application was PySide2, as it is the only version compatible with the other tool used, ryvencore. If you want to create new GUIs or make large changes to the ones that already exist, you will need to learn about QtPy</p>
+
+        <p>ryvencore, on the other hand, is a bit non-standard. It is a library that allows for the creation of 'flow-based visual scripting editors'. Put more simply, it allows us to create nodes that the ryvencore system can then run and manage. While an in depth knowledge about ryvencore is not required to develop nodes, reading up on it will help you to understand what is actually happening when you create a widget for example.</p>
+        
+        <p>Another useful reference to learn about ryvencore, would be it's associated project Ryven. While ryvencore provides the underlying systems that allow nodes to interact with other nodes, Ryven aims to provide a GUI around that framework that allows users to create their nodes through the tool. We found Ryven most useful when looking at the example nodes that were create for it, as it outlines some of the cool things that can be done.</p>
+    </div>
+    <br>
+</body>
+</html>

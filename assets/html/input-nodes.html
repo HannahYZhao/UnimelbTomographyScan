@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Nodes</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Input Nodes</h1>
+    <h2>Select Folder Node</h2>
+    <h3>How to use this node?</h3>
+    <p>
+        This is a very simple node that does the simple job of selecting a folder.
+        It has a simple layout consisting of one button, "Select Folder". Upon pressing
+        this button, the user will be presented with a directory selection dialog. Here
+        the user can select a directory which can be used to save files to or get files
+        from depending on the process use case. Due to its generality, it can be used in
+        various circumstances. The node, when connected, will simply output the path of
+        the directory on the local computer to the next node which can choose to process
+        however it wants.
+    </p>
+    <p>
+        Its use includes but is not limited to:
+    </p>
+    <ul>
+        <li>Providing a folder containing .gipl files for SPHARM Node</li>
+        <li>Providing the root folder of TFMAT files for Alignment Node</li>
+        <li>Providing an empty folder to save log files for SPHARM Node and Visualisation Node</li>
+        <li>Providing a root folder for Create Directories Node as the process workspace</li>
+    </ul>
+    <br>
+    <h2>Select VTK Files Node</h2>
+    <h3>How to use this node?</h3>
+    <p>
+        Select VTK Files Node has a very simple job. It allows the user to select the
+        VTK files that will be used for processing. It has a simple layout that displays
+        a button, a label that shows the number of files currently selected and a list view
+        displaying the files that have been selected. The user can click the button to open
+        a file selection dialog which will restrict the user to only select file with the
+        extension ".VTK". The user can select multiple files. Once the files are selected,
+        the label will update to show the number of files selected and the view will show the
+        files that were selected. If this node is connected to a valid node, the list of
+        selected files will be passed on to the next node in the process.
+    </p>
+</div>
+</body>

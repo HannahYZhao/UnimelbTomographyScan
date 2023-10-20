@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>ts.usermanual</namespace>
+    <virtualFolder>doc</virtualFolder>
+    <filterSection>
+        <toc>
+            <section title="Welcome!" ref="intro.html"></section>
+
+            <section title="Process builder">
+                <section title="What are Processes and Nodes?" ref="processes-nodes-defined.html"></section>
+                <section title="How do I create and run a Process?" ref="creating-running-a-process.html"></section>
+                <section title="How can I create a New Node?" ref="user-create-node.html"></section>
+                <section title="Nodes">
+                    <section title="Input nodes" ref="input-nodes.html"></section>
+                    <section title="Directory helper nodes" ref="directory-helper-nodes.html"></section>
+                    <section title="Output nodes" ref="output-nodes.html"></section>
+                    <section title="ScanFlow module nodes">
+                        <section title="SPHARM node" ref="spharm-node.html"></section>
+                        <section title="Alignment node" ref="alignment-node.html"></section>
+                        <section title="Visualisation node" ref="visualisation-node.html"></section>
+                    </section>
+                </section>
+            </section>
+
+            <section title="Extending this application">
+                <section title="What do I need to know about before extending this application?" ref="developer-background-knowledge.html"></section>
+                <section title="How can I create a New Node? (as a developer)" ref="developer-create-node.html"></section>
+                <section title="How to I access the Inputs and Outputs for a Node?" ref="developer-access-node-input-output.html"></section>
+                <section title="Developing Custom Widgets" ref="developer-implement-widgets.html"></section>
+                <section title="Updating this user manual" ref="developer-updating-user-manual.html"></section>
+            </section>
+        </toc>
+        <files>
+            <file>intro.html</file>
+            <file>images/team-logo-small.png</file>
+
+            <file>processes-nodes-defined.html</file>
+            <file>creating-running-a-process.html</file>
+            <file>user-create-node.html</file>
+
+            <file>developer-background-knowledge.html</file>
+            <file>developer-create-node.html</file>
+            <file>developer-access-node-input-output.html</file>
+            <file>developer-implement-widgets.html</file>
+            <file>developer-updating-user-manual.html</file>
+
+            <file>file-open-node.html</file>
+            <file>select-folder-node.html</file>
+            <file>write-file-node.html</file>
+            <file>alignment-node.html</file>
+            <file>spharm-node.html</file>
+            <file>visualisation-node.html</file>
+            <file>directory-helper-nodes.html</file>
+            <file>input-nodes.html</file>
+            <file>output-nodes.html</file>
+
+        </files>
+    </filterSection>
+</QtHelpProject>

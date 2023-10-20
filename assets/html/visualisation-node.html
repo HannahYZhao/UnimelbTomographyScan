@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Visualisation Node</h1>
+
+        <p>The Visualisation VTK Image node allows a user to view and interact with .vtk images. </p>
+
+        <h3>Loading Files</h3>
+        <ul>
+            <li>
+                Except add files by Select VTK Files Node, you can also add files by click
+                "<strong>Add File(s)...</strong>" button, This will open a window that will
+                allow a person to select .vtk files. Once this has been done, the file name
+                should appear on the left hand side of the window.
+            </li>
+            <li>
+                If you do not want the file names to appear on the left hand side, you can
+                use the <strong>Remove Selected</strong> button on the left hand side.
+            </li>
+        </ul>
+
+        <h3>Viewing Files</h3>
+        <p>Once the given files are loaded, the corresponding file name should appear on the left hand side of the window with a checkbox. If the Visualise button is then selected, it will then render the selected images on the right hand side of the screen. The number of images to display per page can be configured with the Number of models to show on each pagedropdown.</p>
+        <ul>
+            <li>If the dropdown is set to display 1 image per page, then it will show the image in 4orientations: its original orientation as well as sagittal, transversal, and coronal.</li>
+            <li>If more than one image is shown per page, then only 1 orientation is shown. Users can choose the orientation using the dropdown at the top next to the camera button.</li>
+            <li>Once the dropdown is set, and the rendered file would show up on the right hand side.</li>
+        </ul>
+
+        <h3>Interacting with Images</h3>
+        <ul>
+            <li><strong>Camera</strong> button could reset all images to their original orientation</li>
+            <li>There are 3 buttons for flipping about the x, y, and z axes.</li>
+            <li><strong>Axes</strong> button could customize axes color and the transparency of the bone.</li>
+        </ul>
+
+        <h3>Generating Log File</h3>
+        <ul>
+            <li>Once rendered, each image will have a <strong>Log</strong> button. When selected, a File Icon should appear on the left hand side near the file name. </li>
+            <li>Once all desired images have been selected, you can use <strong>Create Log File</strong> node to generate a log file with a timestamp and the list of all file names selected to be logged.</li>
+        </ul>
+
+        <br>
+    </div>
+</body>
+</html>

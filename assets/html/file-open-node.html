@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Open Node</title>
+    <style>
+        h1 {
+            color: black;
+        }
+        div {
+            margin: 40px 30px;
+            background-color: lightblue;
+        }
+        p,li {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        img {
+            border: 5px solid #555;
+            width: 2%;
+            height: 2%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>File Open Node</h1>
+        <h3>How to use this node?</h3>
+        <p>
+            File Open node has a very simple job. It allows the user to select the VTK files that will be used for processing.
+            It has a simple layout that displays a button, a label that shows the number of files currently selected and a list view displaying the
+            files that have been selected. The user can click the button to open a file selection dialog which will restrict the user to only select
+            file with the extension ".VTK". The user can select multiple files. Once the files are selected, the label will update to show the number
+            of files selected and the view will show the files that were selected. If this node is connected to a valid node, the list of selected files
+            will be passed on to the next node in the process.
+        </p>
+        <br>
+    </div>
+</body>
